@@ -1,0 +1,39 @@
+@import "../../../styles/colors";
+
+.chatInputMainContainer {
+  background-color: $gray-bg;
+  width: 100%;
+  padding-bottom: 2px;
+
+  div {
+    height: 100%;
+  }
+
+  button {
+    position: absolute;
+    bottom: 6px;
+  }
+
+  textarea {
+    border-radius: 0px;
+    box-sizing: border-box;
+    padding: 13px 40px 10px 13px;
+    color: $white;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    white-space: pre-line;
+
+    &::placeholder {
+      color: $dark-gray;
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0px;
+    }
+
+  }
+
+}

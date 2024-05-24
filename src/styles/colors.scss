@@ -1,0 +1,11 @@
+$dark-gray: #575757;
+$gray: #abb5b7;
+$white: #edf2f5;
+$black: #000;
+$gray-bg: #212121;
+$black-bg: #0c0e0d;
+$light-green: #d2fd4b;
+
+@function transparent-color($color, $opacity) {
+   @return rgba($color, $opacity);
+}
