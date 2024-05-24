@@ -3,7 +3,7 @@ import { Button } from '@mantine/core';
 
 const Ad = () => {
   return (
-    <div className="mainAdContainer">
+    <div className="mainExtraContentContainer">
       <div>
         <span>Free Plan</span>
         <span>There are 10 free requests left</span>
