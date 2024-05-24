@@ -16,7 +16,7 @@ const TextAnimation = ({ messageText }: TextAnimationProps) => {
       } else {
         clearInterval(interval);
       }
-    }, 50);
+    }, 45);
 
     return () => clearInterval(interval);
   }, [messageText]);
