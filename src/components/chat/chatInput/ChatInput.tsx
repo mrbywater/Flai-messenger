@@ -1,14 +1,15 @@
 import './ChatInput.scss';
-import { Textarea, ActionIcon } from '@mantine/core';
+import { Textarea, ActionIcon, Loader } from '@mantine/core';
 import { IconSend2 } from '@tabler/icons-react';
 import { useRef } from 'react';
 
 type ChatInputProps = {
   setValue: (value: string) => void;
+  loader: boolean;
 };
 
 const ChatInput = (props: ChatInputProps) => {
-  const { setValue } = props;
+  const { setValue, loader } = props;
 
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -28,14 +29,21 @@ const ChatInput = (props: ChatInputProps) => {
         maxRows={15}
         ref={textAreaRef}
         rightSection={
-          <ActionIcon
-            size={32}
-            radius="xl"
-            color="#575757"
-            variant="subtle"
-            onClick={setValueHandler()}>
-            <IconSend2 style={{ width: '24px', height: '24px' }} stroke={1.5} />
-          </ActionIcon>
+          !loader ? (
+            <ActionIcon
+              size={32}
+              radius="xl"
+              color="#575757"
+              variant="subtle"
+              onClick={setValueHandler()}>
+              <IconSend2
+                style={{ width: '24px', height: '24px' }}
+                stroke={1.5}
+              />
+            </ActionIcon>
+          ) : (
+            <Loader color="#575757" size="xs" />
+          )
         }
       />
     </div>

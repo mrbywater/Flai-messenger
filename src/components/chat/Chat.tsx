@@ -6,12 +6,13 @@ import { useState } from 'react';
 
 const Chat = () => {
   const [messageValue, setMessageValue] = useState<string>('');
+  const [loader, setLoader] = useState<boolean>(false);
 
   return (
     <div className="chatMainContainer">
       <Ad />
-      <ChatBoard messageValue={messageValue} />
-      <ChatInput setValue={setMessageValue} />
+      <ChatBoard messageValue={messageValue} setLoader={setLoader} />
+      <ChatInput setValue={setMessageValue} loader={loader} />
     </div>
   );
 };
